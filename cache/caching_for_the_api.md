@@ -1,10 +1,8 @@
 # Caching for the API
 
-Go to the Caching section of my Performance Guide
+Go to the Caching section of my [Rails Performance Guide](https://github.com/stevenjcumming/rails-performance-guide#caching)
 
-[Rails Performance Guide](https://github.com/stevenjcumming/rails-performance-guide#caching)
-
-Here's a snippet for russian doll caching with jbuilder
+Here's a snippet for russian doll caching with Jbuilder
 
 ```ruby
 # views/api/v1/users/index.json.jbuilder
