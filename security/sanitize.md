@@ -8,9 +8,11 @@ This should be the standard practice in your controllers, and it's the absolute 
 
 ```ruby
 # very bad
+
 Example.update(params)
 
 # good
+
 Example.update(example_params)
 
 def example_params
@@ -95,6 +97,7 @@ validates :personal_website, url: true # UrlValidator is under /validators
 
 ```ruby
 # bad
+
 Book.where("title = #{params[:title]}")
 Book.where("title LIKE ?", "%#{params[:title]}%")
 
