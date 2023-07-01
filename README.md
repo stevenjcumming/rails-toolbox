@@ -1,4 +1,4 @@
-# Rails Snippets Toolbox
+# Rails Toolbox
 
 ## About
 
