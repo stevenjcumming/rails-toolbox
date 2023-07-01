@@ -44,6 +44,6 @@ Ruby on Rails snippets, sample code, and cheatsheet focused on API-only (-mostly
 - [my Rails Performance Guide](https://github.com/stevenjcumming/rails-performance-guide)
 - [my Rails Security Guide](https://github.com/stevenjcumming/rails-security-guide)
 
-## Contribions
+## Contributions
 
 Feel free to create new issue or submit a pull request.
