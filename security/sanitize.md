@@ -64,7 +64,7 @@ Let's say you want to link to a user's instagram profile or personal website. Yo
 
 ```ruby
 <%= link_to "Instagram", "https://instagram.com/" + params[:instagram_username] %>
-<%= link_to "Instagram", "https://twitter.com/" + params[:twitter_handle] %>
+<%= link_to "Twitter", "https://twitter.com/" + params[:twitter_handle] %>
 ```
 
 2. Sanitize (and/or validate) the url
