@@ -144,7 +144,7 @@ Option 2: In the form
 ```ruby
 
 class ExampleForm < ApplicationForm
-  include Pundit
+  include Pundit::Authorization
 
   def save
     authorize example
