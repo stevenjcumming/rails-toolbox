@@ -101,8 +101,8 @@ def show
 end
 
 def create
+  authorize Example
   example_form = ExampleForm.new(example_params, current_user)
-  authorize example_form.example
   if example_form.save
     @example = example_form.example
   else
