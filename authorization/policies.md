@@ -24,7 +24,7 @@ class ApplicationPolicy
     user.admin? # Assuming `admin` is the attribute that designates an admin
   end
 
-  # this isn't going to work associations (or delegation) isn't properly configured
+  # this isn't going to work if associations (or delegation) aren't properly configured
   # for example if you use post.author and post.author_id
   def belongs_to_user?
     record.user_id == user.id
@@ -155,7 +155,22 @@ class ExampleForm < ApplicationForm
     @example ||= Example.new(user: current_user)
   end
 end
+```
+In a form we can alternatively use the policies directly
 
+```ruby
+validate :authorization_example
+
+# omit
+
+private
+
+  def authorization_example
+    unless ExamplePolicy.new(current_user, @example).update? # or create?
+      errors.add(:base, "You are not authorized to perform this action.")
+      return false
+    end
+  end
 ```
 
 ### Permissions-based
@@ -212,72 +227,5 @@ def initialize(context, record)
   @role = context.role
   @record = record
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ```
 
-We can use policies in two areas: Controllers and Forms
-
-If your form only create/updates a single model authorize in the controller. Otherwise, you can use policies in the form.
-
-In a controller we want to include Pundit::Authorization so we can use `authorize` and `policy_scope`.
-
-```ruby
-class ApplicationController < ActionController::Base
-  include Pundit::Authorization
-end
-```
-
-```ruby
-# without a form
-def create
-  @example = Example.new(example_params)
-  authorize @example
-  # omit
-end
-
-# with a form
-def create
-  @example = Example.new(example_params)
-  authorize @example
-  example_form = ExampleForm.new(example_params.merge(example: @example), current_user)
-  # omit
-end
-```
-
-In a form we can use the policies directly
-
-```ruby
-validate :authorization_example
-
-# omit
-
-private
-
-  def authorization_example
-    unless ExamplePolicy.new(current_user, @example).update? # or create?
-      errors.add(:base, "You are not authorized to perform this action.")
-      return false
-    end
-  end
-```
-
-or
-
-```ruby
-
-
-
-```
