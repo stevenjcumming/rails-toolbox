@@ -151,7 +151,7 @@ class LoginCredentialsError < StandardError
 
 end
 
-# app/errors/unauthorized
+# app/errors/unauthorized_error.rb
 class UnauthorizedError < StandardError
 
   def as_json(_options=nil)
