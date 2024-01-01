@@ -1,7 +1,6 @@
 class ApplicationForm
 
   include ActiveModel::Model
-  include ActiveModel::Validations
   include ActionController::StrongParameters
 
   attr_reader :current_user, :params
