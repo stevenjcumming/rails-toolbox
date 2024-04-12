@@ -31,7 +31,7 @@ class Api::V1::ExamplesController < Api::V1::ApplicationController
   end
 
   def destroy
-    if @example.desetroy
+    if @example.destroy
       head :ok
     else
       errors = @example.errors
