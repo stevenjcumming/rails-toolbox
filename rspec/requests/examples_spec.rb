@@ -3,7 +3,7 @@
 # Use this as a template that can be updated with others contexts (or routes)
 require 'rails_helper'
 
-RSpec.describe Api::V1::Examples, type: :request do
+RSpec.describe 'Api::V1::Examples', type: :request do
   # Create a user before running the tests
   before(:all) do
     @user = create(:user)
