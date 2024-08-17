@@ -1,4 +1,4 @@
-# What does in /lib?
+# What goes in /lib?
 
 > lib/ is intended to be for non-app specific library code that just happens to live in the app for now (usually pending extraction into open source or whatever). - DHH
 
